@@ -1,0 +1,73 @@
+touch .gitgnore
+touch compose.yaml
+
+sudo docker compose up -d db: Recuperation et lancement du container PostgreSQL
+sudo docker ps -a: Renvoie la liste des containers dockers sur la machine. On fairt cela pour vérifier que le container est bien lancé
+sudo docker logs db: Affiche les logs du container PostgreSQL. J'ai fait cela pour régler le probleme du crash du container PostgreSQL lors de son lancement ( Voir problems.txt)
+mkdir backend: creation du dossier qui va contenir le backend
+cd backend
+
+npm init -y: initialisation du  projet backend avec nodejs
+npm i express prisma @prisma/client: installation des dépendances
+npx prisma init: initialisation de prisma
+
+Command: touch index.js 
+Explanation: Création du fichier index.js
+Reason: Le fichier va contenir notre page web en JS
+Timestamp: sam. 28 déc. 2024 17:41:06 CET
+-------------------------------------
+Command: stop_logging
+Purpose: Stop the logging session of dim. 29 déc. 2024 16:24:16 CET.
+Reason: No longer need to log commands for this session.
+Timestamp: dim. 29 déc. 2024 16:24:16 CET
+-----
+Command: start_logging
+Purpose: Start the logging session of dim. 29 déc. 2024 16:24:17 CET.
+Reason: To log all subsequent commands of this session.
+Timestamp: dim. 29 déc. 2024 16:24:17 CET
+-----
+Command: npx prisma generate
+Purpose: To generate the model
+Reason: create the model
+Timestamp: dim. 29 déc. 2024 16:25:28 CET
+-----
+Command: stop_logging
+Purpose: Stop the logging session of dim. 29 déc. 2024 16:30:08 CET.
+Reason: No longer need to log commands for this session.
+Timestamp: dim. 29 déc. 2024 16:30:08 CET
+-----
+Command: start_logging
+Purpose: Start the logging session of dim. 29 déc. 2024 16:46:02 CET.
+Reason: To log all subsequent commands of this session.
+Timestamp: dim. 29 déc. 2024 16:46:02 CET
+-----
+Command: touch .dockerignore backend.dockerfile
+Purpose: creation du dockerfile pour le backend
+Reason: pour faire la dockerisation du nodejs
+Timestamp: dim. 29 déc. 2024 16:47:34 CET
+-----
+Command: sudo docker compose build
+Purpose: Lancer les containers dockers
+Reason: pour tester leur fonctionnement
+Timestamp: dim. 29 déc. 2024 16:51:38 CET
+-----
+Command: sudo docker compose build
+Purpose: pour lancer tous les containers de l'app
+Reason: Pour pouvoir tester l'intéractions entre les diffférents containers
+Timestamp: dim. 29 déc. 2024 16:54:11 CET
+-----
+Command: sudo docker compose up -d backend
+Purpose: pour lancer le conttainer backend
+Reason: pour le tester
+Timestamp: dim. 29 déc. 2024 16:54:36 CET
+-----
+Command: sudo docker exec -it db psql -U postgres
+Purpose: lancer la commande psql -U postgres sur le container db
+Reason: pour tester le container fonctionne correctement et qu'on peut intéragir avec la db
+Timestamp: dim. 29 déc. 2024 17:01:00 CET
+-----
+Command: stop_logging
+Purpose: Stop the logging session of dim. 29 déc. 2024 18:24:02 CET.
+Reason: No longer need to log commands for this session.
+Timestamp: dim. 29 déc. 2024 18:24:02 CET
+-----
