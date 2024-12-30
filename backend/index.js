@@ -20,7 +20,7 @@ app.get('/test', (req, res) => {
     try {
         res.status(200).json({ message: 'API is working' });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: 'this 1' + error.message });
     }
     res.send('Hello World!');
 });
@@ -31,7 +31,7 @@ app.get('/users', async (req, res) => {
         const users = await prisma.user.findMany();
         res.status(200).json(users);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: 'this 2' + error.message });
     }
 });
 
@@ -46,7 +46,7 @@ app.get('/users/:id', async (req, res) => {
         });
         res.status(200).json(user);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: 'this 3' + error.message });
     }
 });
 
@@ -62,7 +62,7 @@ app.post('/users', async (req, res) => {
         });
         res.status(201).json(user);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: 'this 4' + error.message });
     }
 });
 
@@ -82,7 +82,7 @@ app.put('/users/:id', async (req, res) => {
         });
         res.status(200).json(user);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: 'this 5' + error.message });
     }
 });
 
@@ -97,10 +97,10 @@ app.delete('/users/:id', async (req, res) => {
         });
         res.status(204).send();
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: 'this 6' +error.message });
     }
 });
 
 //start server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
